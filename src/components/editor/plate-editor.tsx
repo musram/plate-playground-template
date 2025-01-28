@@ -9,6 +9,7 @@ import { Plate } from '@udecode/plate/react';
 import { SettingsDialog } from '@/components/editor/settings';
 import { useCreateEditor } from '@/components/editor/use-create-editor';
 import { Editor, EditorContainer } from '@/components/plate-ui/editor';
+import { AiChatWindow } from '@/components/plate-ui/ai-chat-window';
 
 export function PlateEditor() {
   const editor = useCreateEditor();
@@ -18,9 +19,9 @@ export function PlateEditor() {
       <Plate editor={editor}>
         <EditorContainer>
           <Editor variant="demo" />
+          <AiChatWindow />
         </EditorContainer>
 
-        <SettingsDialog />
       </Plate>
     </DndProvider>
   );

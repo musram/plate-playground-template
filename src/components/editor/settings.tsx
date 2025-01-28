@@ -198,9 +198,9 @@ export function SettingsDialog() {
           size="icon"
           variant="default"
           className={cn(
-            'group fixed bottom-4 right-4 z-50 size-10 overflow-hidden',
-            'rounded-full shadow-md hover:shadow-lg',
-            'transition-all duration-300 ease-in-out hover:w-[106px]'
+            'group z-50= size-10 overflow-hidden',
+            'rounded-full shadow-md hover:shadow-lg', 
+            'transition-all duration-300 ease-in-out hover:w-[90px]'
           )}
           data-block-hide
         >
