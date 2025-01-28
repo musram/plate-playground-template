@@ -5,12 +5,23 @@ import { convertToCoreMessages, streamText } from 'ai';
 import { NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
-  const {
-    apiKey: key,
-    messages,
-    model = 'gpt-4o-mini',
-    system,
-  } = await req.json();
+  // Add error handling for empty request body
+  const body = await req.text();
+  if (!body) {
+    return NextResponse.json(
+      { error: 'Request body is empty' },
+      { status: 400 }
+    );
+  }
+
+  const { apiKey: key, messages, model, system } = JSON.parse(body);
+
+  if (!messages) {
+    return NextResponse.json(
+      { error: 'Messages are required' },
+      { status: 400 }
+    );
+  }
 
   const apiKey = key || process.env.OPENAI_API_KEY;
 

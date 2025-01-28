@@ -5,12 +5,20 @@ import { generateText } from 'ai';
 import { NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
-  const {
-    apiKey: key,
-    model = 'gpt-4o-mini',
-    prompt,
-    system,
-  } = await req.json();
+  // Add error handling for empty request body
+  const body = await req.text();
+  if (!body) {
+    return NextResponse.json(
+      { error: 'Request body is empty' },
+      { status: 400 }
+    );
+  }
+
+  const { apiKey: key, model, prompt, system } = JSON.parse(body);
+
+  if (!prompt) {
+    return NextResponse.json({ error: 'Prompt is required' }, { status: 400 });
+  }
 
   const apiKey = key || process.env.OPENAI_API_KEY;
 
