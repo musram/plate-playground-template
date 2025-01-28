@@ -1,0 +1,22 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "prettier.requireConfig": true,
+    "prettier.useEditorConfig": false,
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 16,
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.suggest.autoImports": true,
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true
+  }
+  
